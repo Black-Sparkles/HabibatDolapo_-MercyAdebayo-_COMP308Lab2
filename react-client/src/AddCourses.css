@@ -1,0 +1,83 @@
+/* AddCourses.css */
+
+.add-course-container {
+  max-width: 800px; /* Set a max width for the container */
+  margin: 20px auto; /* Center the container */
+  padding: 20px; /* Padding for the container */
+  background-color: #fff; /* White background for the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+h2 {
+  text-align: center; /* Center the heading */
+  color: #007bff; /* School-friendly blue color */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.course-table {
+  width: 100%; /* Full width table */
+  border-collapse: collapse; /* Remove space between table cells */
+  margin-bottom: 20px; /* Space below the table */
+}
+
+.course-table th,
+.course-table td {
+  padding: 12px; /* Padding inside cells */
+  text-align: left; /* Left align text */
+  border-bottom: 1px solid #ccc; /* Light border for rows */
+}
+
+.course-table th {
+  background-color: #f2f3f5; /* Light grey background for headers */
+  color: #333; /* Dark text for headers */
+}
+
+.course-table tr:hover {
+  background-color: #e9ecef; /* Light hover effect for rows */
+}
+
+.btn {
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 8px 12px; /* Padding for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.loader {
+  border: 4px solid #f3f3f3; /* Light loader color */
+  border-top: 4px solid #007bff; /* Spinner color */
+  border-radius: 50%; /* Round loader */
+  width: 30px; /* Loader size */
+  height: 30px; /* Loader size */
+  animation: spin 1s linear infinite; /* Spin animation */
+  margin: 0 auto; /* Center loader */
+}
+
+.error {
+  color: red; /* Error message color */
+  text-align: center; /* Center error message */
+  margin-top: 10px; /* Space above error message */
+}
+
+.toast {
+  background-color: #d4edda; /* Light green background for success */
+  color: #155724; /* Dark green text */
+  padding: 10px; /* Padding for toast */
+  border-radius: 4px; /* Rounded corners */
+  margin-top: 10px; /* Space above toast */
+  text-align: center; /* Center the toast message */
+}
+
+/* Spin animation for loader */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,119 @@
+/* App.css */
+
+.container {
+  max-width: 800px; /* Set a max width for the container */
+  margin: 50px auto; /* Center the container */
+  padding: 20px;
+  background-color: #fff; /* White background for the container */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+h2 {
+  text-align: center; /* Center the heading */
+  color: #007bff; /* School-friendly blue color */
+}
+
+.loader {
+  border: 4px solid #f3f3f3; /* Light loader color */
+  border-top: 4px solid #007bff; /* Spinner color */
+  border-radius: 50%; /* Round loader */
+  width: 40px; /* Loader size */
+  height: 40px; /* Loader size */
+  animation: spin 1s linear infinite; /* Spin animation */
+  margin: 20px auto; /* Center the loader */
+}
+
+/* Spin animation for loader */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  color: red; /* Error message color */
+  text-align: center; /* Center error message */
+  margin-top: 10px; /* Space above error message */
+}
+
+.course-select {
+  width: 100%; /* Full width select */
+  padding: 10px; /* Padding for select */
+  margin: 20px 0; /* Space above and below */
+  border: 1px solid #ccc; /* Light border for select */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1rem; /* Font size for select */
+}
+
+.students-table {
+  width: 100%; /* Full width table */
+  border-collapse: collapse; /* Collapse borders */
+  margin-top: 20px; /* Space above table */
+}
+
+.students-table th,
+.students-table td {
+  border: 1px solid #ccc; /* Light border */
+  padding: 10px; /* Padding for cells */
+  text-align: left; /* Left align text */
+}
+
+.students-table th {
+  background-color: #007bff; /* Header background color */
+  color: white; /* Header text color */
+}
+
+.students-table tr:hover {
+  background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.btn {
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 8px 12px; /* Padding for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.toast {
+  position: fixed; /* Position toast at the bottom */
+  bottom: 20px; /* Space from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  background-color: #28a745; /* Success color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding for toast */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for toast */
+  transition: opacity 0.5s; /* Smooth fade-out */
+}
+
+.back-button {
+  background-color: #22ff82; /* Change to a vibrant color (e.g., orange) */
+  color: white; /* Button text color */
+  padding: 10px 15px; /* Increase padding for larger button */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1rem; /* Font size for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color transition */
+  margin-bottom: 20px; /* Space below the button */
+}
+
+.back-button:hover {
+  background-color: #e64a19; /* Darker shade on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 800px) {
+  .container {
+    margin: 20px; /* Reduce margin on small screens */
+    padding: 15px; /* Reduce padding on small screens */
+  }
+}

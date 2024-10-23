@@ -1,0 +1,90 @@
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f2f3f5;
+  color: #333;
+}
+
+.app {
+  padding: 20px;
+}
+
+.navbar {
+  background-color: #007bff; /* School-friendly blue color */
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  margin-left: 15px;
+}
+
+.nav-link:hover {
+  background-color: #0056b3; /* Darken on hover */
+  color: #fff;
+  border-radius: 5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #007bff; /* Consistent color for headings */
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.loader {
+  border: 3px solid #f3f3f3; /* Light loader color */
+  border-top: 3px solid #007bff; /* Spinner color */
+  border-radius: 50%; /* Round loader */
+  width: 16px; /* Smaller loader size */
+  height: 16px; /* Smaller loader size */
+  animation: spin 1s linear infinite; /* Spin animation */
+  margin-right: 10px; /* Space between loader and button text */
+}
+
+/* Spin animation for loader */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+}

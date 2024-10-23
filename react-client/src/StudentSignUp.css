@@ -1,0 +1,78 @@
+
+.login-container {
+  max-width: 400px; /* Set a max width for the sign-up form */
+  margin: 50px auto; /* Center the form */
+  padding: 20px;
+  background-color: #fff; /* White background for the form */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+h2 {
+  text-align: center; /* Center the heading */
+  color: #007bff; /* School-friendly blue color */
+}
+
+input {
+  width: 100%; /* Full width inputs */
+  padding: 10px; /* Padding for inputs */
+  margin-bottom: 20px; /* Space below inputs */
+  border: 1px solid #ccc; /* Light border for inputs */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1rem; /* Font size for inputs */
+}
+input[type="email"] {
+  margin-bottom: 20px; /* Space between email and program inputs */
+}
+
+input:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+button {
+  width: 100%; /* Full width button */
+  padding: 10px; /* Padding for button */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1rem; /* Font size for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color transition */
+  display: flex; /* Use flexbox to align items */
+  align-items: center; /* Center items vertically */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.loader {
+  border: 3px solid #f3f3f3; /* Light loader color */
+  border-top: 3px solid #007bff; /* Spinner color */
+  border-radius: 50%; /* Round loader */
+  width: 16px; /* Smaller loader size */
+  height: 16px; /* Smaller loader size */
+  animation: spin 1s linear infinite; /* Spin animation */
+  margin-right: 10px; /* Space between loader and button text */
+}
+
+/* Spin animation for loader */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  color: red; /* Error message color */
+  text-align: center; /* Center error message */
+  margin-top: 10px; /* Space above error message */
+}
+
+/* Responsive styles */
+@media (max-width: 400px) {
+  .login-container {
+    margin: 20px; /* Reduce margin on small screens */
+  }
+}

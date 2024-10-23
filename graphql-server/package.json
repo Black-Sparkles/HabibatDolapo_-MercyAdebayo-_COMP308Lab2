@@ -1,0 +1,47 @@
+{
+  "name": "express-react-example",
+  "version": "0.0.0",
+  "description": "Express React Example",
+  "main": "server.js",
+  "author": {
+    "name": "H",
+    "email": ""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server-express": "^3.13.0",
+    "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.10.1",
+    "graphql": "^15.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.13.22",
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "start": "nodemon server",
+    "dev": "nodemon server"
+  },
+  "keywords": [
+    "Express",
+    "GraphQL",
+    "MongoDB",
+    "Node",
+    "API",
+    "Student",
+    "Course"
+  ],
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

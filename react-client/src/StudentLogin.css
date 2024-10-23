@@ -1,0 +1,115 @@
+/* App.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f2f3f5; /* Light background for a soft look */
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  max-width: 400px; /* Set a max width for the login form */
+  margin: 50px auto; /* Center the form vertically and horizontally */
+  padding: 20px;
+  background-color: #fff; /* White background for the form */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+h2 {
+  text-align: center; /* Center the heading */
+  color: #007bff; /* School-friendly blue color */
+}
+
+label {
+  display: block; /* Stack labels and inputs */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold; /* Make labels bold */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%; /* Full width inputs */
+  padding: 10px; /* Padding for inputs */
+  margin-bottom: 20px; /* Space below inputs */
+  border: 1px solid #ccc; /* Light border for inputs */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1rem; /* Font size for inputs */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+button {
+  width: 100%; /* Full width button */
+  padding: 10px; /* Padding for button */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 1rem; /* Font size for button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.error {
+  color: red; /* Error message color */
+  text-align: center; /* Center error message */
+  margin-top: 10px; /* Space above error message */
+}
+
+.toast {
+  position: fixed; /* Position toast at the bottom */
+  bottom: 20px; /* Space from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  background-color: #28a745; /* Success color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding for toast */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for toast */
+  transition: opacity 0.5s; /* Smooth fade-out */
+}
+
+.loader {
+  border: 3px solid #f3f3f3; /* Light loader color */
+  border-top: 3px solid #007bff; /* Spinner color */
+  border-radius: 50%; /* Round loader */
+  width: 16px; /* Smaller loader size */
+  height: 16px; /* Smaller loader size */
+  animation: spin 1s linear infinite; /* Spin animation */
+  margin-right: 10px; /* Space between loader and button text */
+}
+
+/* Spin animation for loader */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+p {
+  text-align: center; /* Center the paragraph */
+}
+
+a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 400px) {
+  .login-container {
+    margin: 20px; /* Reduce margin on small screens */
+  }
+}
