@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"; 
 import { useParams } from "react-router-dom";
 import NavigateBack from "../route/navigate";
 
@@ -13,18 +13,35 @@ const UpdateCourse = () => {
   const [loadingCourseDetails, setLoadingCourseDetails] = useState(true);
   const [error, setError] = useState(null);
 
-  // Fetch course details based on courseID
+  // Fetch course details based on courseID using GraphQL
   useEffect(() => {
     const fetchCourseDetails = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:5000/api/courses/${courseID}`
-        );
+        const query = `
+          query {
+            getCourseById(id: "${courseID}") {
+              courseCode
+              courseName
+              section
+              semester
+            }
+          }
+        `;
+        
+        const response = await fetch("http://localhost:5000/graphql", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ query }),
+        });
+
         if (!response.ok) {
           throw new Error("Failed to fetch course details");
         }
-        const data = await response.json();
-        setCourse(data);
+
+        const { data } = await response.json();
+        setCourse(data.getCourseById);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -44,28 +61,47 @@ const UpdateCourse = () => {
     }));
   };
 
-  // Handle form submission for updating the course
+  // Handle form submission for updating the course using GraphQL mutation
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(
-        `http://localhost:5000/api/courses/${courseID}`,
-        {
-          method: "PUT",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(course),
+      const mutation = `
+        mutation {
+          updateCourseById(
+            id: "${courseID}", 
+            courseCode: "${course.courseCode}", 
+            courseName: "${course.courseName}", 
+            section: "${course.section}", 
+            semester: "${course.semester}"
+          ) {
+            id
+            courseCode
+            courseName
+            section
+            semester
+          }
         }
-      );
+      `;
+      
+      const response = await fetch("http://localhost:5000/graphql", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query: mutation }),
+      });
+
       if (!response.ok) {
         throw new Error("Failed to update course");
       }
+
       alert("Course updated successfully");
     } catch (err) {
       setError(err.message);
     }
-  };
+   
+};
+  
 
   return (
     <div className="container">

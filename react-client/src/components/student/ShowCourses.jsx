@@ -14,24 +14,38 @@ const ShowCourses = () => {
         if (!token) {
           throw new Error('No token found');
         }
-        
+
         const decodedToken = JSON.parse(atob(token.split('.')[1]));
         const studentID = decodedToken.id;
 
-        const response = await fetch(`http://localhost:5000/api/students/${studentID}/courses`, {
-          method: 'GET',
+        // GraphQL query to fetch enrolled courses for the student
+        const query = `
+          query {
+            getEnrolledCourses(studentId: "${studentID}") {
+              id
+              courseCode
+              courseName
+              section
+              semester
+            }
+          }
+        `;
+
+        const response = await fetch('http://localhost:5000/graphql', {
+          method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-          }
+            'Authorization': `Bearer ${token}`,
+          },
+          body: JSON.stringify({ query }),
         });
 
         if (!response.ok) {
           throw new Error('Failed to fetch courses');
         }
 
-        const data = await response.json();
-        setCourses(data);
+        const { data } = await response.json();
+        setCourses(data.getEnrolledCourses);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -61,8 +75,8 @@ const ShowCourses = () => {
             </tr>
           </thead>
           <tbody>
-            {courses.map(course => (
-              <tr key={course._id}>
+            {courses.map((course) => (
+              <tr key={course.id}>
                 <td>{course.courseCode}</td>
                 <td>{course.courseName}</td>
                 <td>{course.section}</td>

@@ -25,12 +25,31 @@ const CreateCourses = () => {
     setSuccess(false);
 
     try {
-      const response = await fetch('http://localhost:5000/api/courses', {
+      // Define GraphQL mutation
+      const mutation = `
+        mutation {
+          createCourse(
+            courseCode: "${course.courseCode}", 
+            courseName: "${course.courseName}", 
+            section: "${course.section}", 
+            semester: "${course.semester}"
+          ) {
+            id
+            courseCode
+            courseName
+            section
+            semester
+          }
+        }
+      `;
+
+      // Make the fetch request to the GraphQL endpoint
+      const response = await fetch('http://localhost:5000/graphql', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(course)
+        body: JSON.stringify({ query: mutation })
       });
 
       if (response.ok) {
@@ -65,19 +84,43 @@ const CreateCourses = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label>Course Code:</label>
-          <input type="text" name="courseCode" value={course.courseCode} onChange={handleChange} required />
+          <input
+            type="text"
+            name="courseCode"
+            value={course.courseCode}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div>
           <label>Course Name:</label>
-          <input type="text" name="courseName" value={course.courseName} onChange={handleChange} required />
+          <input
+            type="text"
+            name="courseName"
+            value={course.courseName}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div>
           <label>Section:</label>
-          <input type="text" name="section" value={course.section} onChange={handleChange} required />
+          <input
+            type="text"
+            name="section"
+            value={course.section}
+            onChange={handleChange}
+            required
+          />
         </div>
         <div>
           <label>Semester:</label>
-          <input type="text" name="semester" value={course.semester} onChange={handleChange} required />
+          <input
+            type="text"
+            name="semester"
+            value={course.semester}
+            onChange={handleChange}
+            required
+          />
         </div>
         <button type="submit" className="btn" disabled={loading}>
           {loading ? <div className="loader"></div> : 'Create Course'}

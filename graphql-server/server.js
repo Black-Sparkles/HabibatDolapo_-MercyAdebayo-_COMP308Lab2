@@ -7,9 +7,9 @@ const dotenv = require("dotenv");
 const morgan = require("morgan");
 const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
-const typeDefs = require("./app/graphql/schemas/index.schema"); // Adjust path as necessary
-const resolvers = require("./app/graphql/resolvers/index.server.resolver"); // Adjust path as necessary
-const auth = require("./app/graphql/middleware/auth"); // Adjust path as necessary
+const typeDefs = require("./app/graphql/schemas/index.schema"); 
+const resolvers = require("./app/graphql/resolvers/index.server.resolver");
+const auth = require("./app/graphql/middleware/auth"); 
 
 // Load environment variables
 dotenv.config();

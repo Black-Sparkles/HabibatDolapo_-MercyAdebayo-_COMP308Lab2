@@ -25,7 +25,19 @@ const studentSchema = gql`
   }
 
   type Mutation {
-    createStudent(studentNumber: String!, password: String!, firstName: String!, lastName: String!, address: String!, city: String!, phoneNumber: String!, email: String!, program: String!): Student
+    createStudent(
+      studentNumber: String!, 
+      password: String!, 
+      firstName: String!, 
+      lastName: String!, 
+      address: String!, 
+      city: String!, 
+      phoneNumber: String!, 
+      email: String!, 
+      program: String!,
+      favoriteTopic: String,
+      strongestSkill: String
+    ): Student
     updateStudentById(id: ID!, studentNumber: String, password: String, firstName: String, lastName: String, address: String, city: String, phoneNumber: String, email: String, program: String, favoriteTopic: String, strongestSkill: String): Student
     deleteStudentById(id: ID!): String
     addCourseToStudent(studentId: ID!, courseId: ID!): Student
